@@ -8,7 +8,7 @@ import ColorPalette from "@/static/images/icons/color-palette.svg";
 import GlobeEU from "@/static/images/icons/globe-eu.svg";
 import TechnicalSupport from "@/static/images/icons/support.svg";
 
-const PricingIndex = () => {
+const Pricing = () => {
   return (
     <div className="">
       <div className="overflow-hidden rounded-lg border-2 border-primary shadow-2xl">
@@ -127,4 +127,4 @@ const PricingIndex = () => {
     </div>
   );
 };
-export default PricingIndex;
+export default Pricing;

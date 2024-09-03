@@ -7,7 +7,7 @@ import Team2 from "@/static/images/feature/team-2.jpg";
 import FeatureImage from "./FeatureImage";
 import ContentContainer from "./ContentContainer";
 
-const FeatureIndex = () => {
+const Feature = () => {
   return (
     <div className="relative">
       <div className="flex flex-wrap items-center gap-16 lg:flex-nowrap lg:gap-20">
@@ -69,4 +69,4 @@ const FeatureIndex = () => {
   );
 };
 
-export default FeatureIndex;
+export default Feature;

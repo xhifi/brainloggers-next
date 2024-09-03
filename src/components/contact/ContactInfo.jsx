@@ -11,7 +11,7 @@ import {
 import ContentWrapper from "./ContentWrapper";
 import Map from "./Map";
 
-const ContactIndex = () => {
+const ContactInfo = () => {
   return (
     <div className="flex flex-wrap items-center justify-between gap-x-20 gap-y-10 lg:flex-nowrap lg:gap-y-0">
       <Map />
@@ -78,4 +78,4 @@ const ContactIndex = () => {
     </div>
   );
 };
-export default ContactIndex;
+export default ContactInfo;

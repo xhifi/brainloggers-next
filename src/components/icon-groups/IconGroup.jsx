@@ -8,7 +8,7 @@ import { BsArrowRight } from "react-icons/bs";
 import AnimatedWrapper from "./AnimatedWrapper";
 import TitleBlock from "./TitleBlock";
 
-const index = () => {
+const IconGroup = () => {
   return (
     <div className="group/section grid grid-cols-1 place-items-center gap-8 md:grid-cols-2 lg:grid-cols-4">
       <TitleBlock className="relative row-span-2 flex h-full w-full items-center rounded-lg border-2 border-primary text-dark shadow-2xl transition-colors group-hover/section:bg-primary group-hover/section:text-light">
@@ -45,4 +45,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default IconGroup;

@@ -1,4 +1,4 @@
-import Breadcrumbs from "@/components/breadcrumbs";
+import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 
 const layout = ({ children }) => {
   return (

@@ -1,6 +1,6 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { BsArrowLeft, BsArrowRight, BsHouseFill } from "react-icons/bs";
+import { BsArrowLeft, BsHouseFill } from "react-icons/bs";
 import Link from "../primitives/Link";
 
 const Breadcrumbs = () => {

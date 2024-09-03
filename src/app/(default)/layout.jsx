@@ -1,5 +1,5 @@
-import Navigation from "@/components/navigation";
-import Footer from "@/components/footer";
+import Navigation from "@/components/navigation/Navigation";
+import Footer from "@/components/footer/Footer";
 import PostFooter from "@/components/footer/PostFooter";
 import Image from "next/image";
 import DottedMap from "@/static/images/decorations/illustrations/map-dotted.svg";

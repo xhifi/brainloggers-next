@@ -1,18 +1,19 @@
-import Hero from "@/components/hero";
-import FAQ from "@/components/faq";
+import Image from "next/image";
+
+import Hero from "@/components/hero/Hero";
 import Carousel from "@/components/cards-carousel/Carousel";
 import Card from "@/components/cards-carousel/Card";
 
-import IconGroups from "@/components/icon-groups";
+import IconGroups from "@/components/icon-groups/IconGroup";
 import faqs from "@/static/data/faqs";
 import Spacer from "@/components/primitives/Spacer";
-import PricingIndex from "@/components/pricing";
-import FeatureIndex from "@/components/feature";
-import ContactIndex from "@/components/contact";
+import Pricing from "@/components/pricing/Pricing";
+import FeatureIndex from "@/components/feature/Feature";
+import ContactInfo from "@/components/contact/ContactInfo";
+import SectionHeading from "@/components/primitives/SectionHeading";
 
 import CornerStructure from "@/static/images/decorations/illustrations/corner-struct.svg";
-import Image from "next/image";
-import SectionHeading from "@/components/primitives/SectionHeading";
+import AccordionGroup from "@/components/faq/AccordionGroup";
 
 export default function Home() {
   const cards = data.map((card, index) => (
@@ -62,14 +63,14 @@ export default function Home() {
         <SectionHeading>
           Price is what you pay Value is what you get
         </SectionHeading>
-        <PricingIndex />
+        <Pricing />
       </section>
 
       <Spacer />
 
       <section className="px-6">
         <SectionHeading>Frequently asked questions</SectionHeading>
-        <FAQ data={faqs} />
+        <AccordionGroup data={faqs} />
       </section>
 
       <Spacer />
@@ -78,7 +79,7 @@ export default function Home() {
         <SectionHeading>
           Contacting us can&apos;t be easier any easier
         </SectionHeading>
-        <ContactIndex />
+        <ContactInfo />
       </section>
 
       <Spacer />

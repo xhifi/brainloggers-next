@@ -9,10 +9,10 @@ import RatingStars from "./RatingStars";
 import Link from "../primitives/Link";
 import Button from "../primitives/Button";
 import { BsTelephoneFill } from "react-icons/bs";
-import IconsScroll from "@/components/icons-scroll";
+import IconsScroll from "@/components/icons-scroll/IconScroll";
 import Decor1 from "@/static/images/decorations/shape1.png";
 
-const HeroIndex = () => {
+const Hero = () => {
   return (
     <section className="bg-grid-black/[0.1] relative overflow-hidden bg-primary pb-10 pt-10 shadow-2xl dark:bg-primary-dark lg:pt-20">
       <div className="absolute -top-44 right-64 h-[2000px] w-96 rotate-[22deg] bg-gradient-to-l from-transparent via-light to-transparent px-44 opacity-15 blur-xl lg:px-6" />
@@ -110,4 +110,4 @@ const HeroIndex = () => {
     </section>
   );
 };
-export default HeroIndex;
+export default Hero;
