@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <GoogleTagManager gtmId="G-JXHYC29FW9" />
       <body
-        className={`${roboto.variable}relative overflow-x-hidden bg-light text-content-light transition-colors dark:bg-dark dark:text-content-dark`}
+        className={`${roboto.variable}relative overflow-x-hidden bg-light text-dark dark:bg-dark dark:text-light`}
       >
         <ContextsProvider>{children}</ContextsProvider>
         <CookieConsent />

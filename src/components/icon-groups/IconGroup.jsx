@@ -11,7 +11,7 @@ import TitleBlock from "./TitleBlock";
 const IconGroup = () => {
   return (
     <div className="group/section grid grid-cols-1 place-items-center gap-8 md:grid-cols-2 lg:grid-cols-4">
-      <TitleBlock className="relative row-span-2 flex h-full w-full items-center rounded-lg border-2 border-primary text-dark shadow-2xl transition-colors group-hover/section:bg-primary group-hover/section:text-light">
+      <TitleBlock className="relative row-span-2 flex h-full w-full items-center rounded-lg border-2 border-primary text-dark shadow-2xl transition-colors group-hover/section:bg-primary group-hover/section:text-light dark:border-primary-light dark:text-light dark:group-hover/section:bg-primary-dark">
         <Image src={CornerStructure} className="absolute left-0 top-0" alt="" />
         <div className="relative z-10 p-8">
           <h3 className="text-balance text-2xl font-bold tracking-normal">

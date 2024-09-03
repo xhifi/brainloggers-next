@@ -9,8 +9,8 @@ export default function RootLayout({ children }) {
     <>
       <Navigation />
       {children}
-      <section className="overflow-hidden border-t">
-        <div className="relative bg-primary px-6 py-14 text-content-dark">
+      <section className="overflow-hidden border-t dark:border-primary-light">
+        <div className="relative bg-primary px-6 py-14 dark:bg-primary-dark">
           <Image
             src={DottedMap}
             alt=""
@@ -20,7 +20,7 @@ export default function RootLayout({ children }) {
             <Footer />
           </div>
         </div>
-        <div className="relative z-10">
+        <div className="relative z-10 bg-primary text-light dark:bg-primary-dark">
           <PostFooter />
         </div>
       </section>

@@ -4,10 +4,10 @@ const PriceTitle = ({ price, unit, description, title }) => {
   return (
     <div className="">
       <div className="flex items-center justify-center">
-        <p className="h2 relative inline-block font-extrabold text-primary group-hover:text-warning">
+        <p className="h2 relative inline-block font-extrabold text-primary group-hover:text-warning dark:text-light">
           {price && (
             <>
-              <BsCurrencyPound className="absolute -left-7 top-0 size-8 fill-primary group-hover:fill-warning" />
+              <BsCurrencyPound className="absolute -left-7 top-0 size-8 fill-primary group-hover:fill-warning dark:fill-light" />
               {price}
             </>
           )}
@@ -18,9 +18,7 @@ const PriceTitle = ({ price, unit, description, title }) => {
           )}
         </p>
       </div>
-      <h4 className="text-center text-primary group-hover:text-warning">
-        {title}
-      </h4>
+      <h4 className="text-center group-hover:text-warning">{title}</h4>
       {description && <p className="text-center">{description}</p>}
     </div>
   );

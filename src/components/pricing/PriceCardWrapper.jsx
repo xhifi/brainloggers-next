@@ -9,7 +9,7 @@ const PriceCardWrapper = ({ children }) => {
         backgroundColor: colors.zinc[800],
         transition: { duration: 0.1 },
       }}
-      className="group relative flex w-full flex-col overflow-hidden border-primary last:border-b-0 last:border-e-0 hover:text-light md:w-1/2 lg:w-1/4"
+      className="group relative flex w-full flex-col overflow-hidden border-primary last:border-b-0 last:border-e-0 hover:text-light dark:border-primary-light md:w-1/2 lg:w-1/4"
     >
       <motion.div
         className="h-full"

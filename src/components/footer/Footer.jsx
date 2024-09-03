@@ -43,9 +43,9 @@ const contactInfo = [
 const Footer = () => {
   return (
     <>
-      <div className="grid grid-cols-1 items-start gap-6 md:grid-cols-2 lg:grid-cols-3 lg:place-items-center">
+      <div className="grid grid-cols-1 items-start gap-6 text-light md:grid-cols-2 lg:grid-cols-3 lg:place-items-center">
         <div className="col-span-1 space-y-3 md:w-1/2 lg:w-auto">
-          <BrandLogo color="light" width="250" />
+          <BrandLogo color="dark" width="250" />
           <ul className="space-y-0">
             <AnimatedList items={contactInfo} />
           </ul>

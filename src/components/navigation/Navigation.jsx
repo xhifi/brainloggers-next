@@ -82,14 +82,10 @@ const AppNavigation = () => {
     <>
       <NavigationSocial />
 
-      <header className="sticky top-0 z-50 flex items-center border-b bg-light shadow transition-colors dark:bg-dark">
+      <header className="sticky top-0 z-50 flex items-center border-b bg-light text-dark shadow transition-colors dark:border-primary-light dark:bg-dark dark:text-light">
         <div className="w-full px-6 lg:px-6">
           <nav className="relative z-10 box-border flex w-full basis-full flex-wrap items-center py-2">
-            <BrandLogo
-              width={160}
-              color="fill-dark"
-              className="transition-none dark:invert"
-            />
+            <BrandLogo width={160} color="dark" className="transition-none" />
 
             <NavLinks links={data} menu={{ menuRef, setMenuOpen }} />
             <div className="z-10 ml-auto flex items-center gap-x-2">
@@ -97,7 +93,7 @@ const AppNavigation = () => {
                 id="site-nav"
                 menu={{ menuOpen, setMenuOpen, menuRef }}
               />
-              {/* <DarkModeToggle /> */}
+              <DarkModeToggle />
             </div>
           </nav>
         </div>

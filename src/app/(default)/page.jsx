@@ -38,7 +38,7 @@ export default function Home() {
 
       <Spacer />
 
-      <section className="relative bg-primary px-6 py-16 text-light shadow-2xl">
+      <section className="relative bg-primary px-6 py-16 text-light shadow-2xl dark:bg-primary-dark">
         <Image
           src={CornerStructure}
           className="absolute left-0 top-0"

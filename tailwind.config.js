@@ -50,9 +50,7 @@ module.exports = {
         "secondary-dark": "#343945",
 
         light: colors.zinc[100],
-        dark: colors.slate[900],
-        "content-dark": colors.zinc[100],
-        "content-light": colors.slate[900],
+        dark: colors.zinc[900],
 
         success: "#077C76",
         info: "#334AC0",

@@ -17,7 +17,7 @@ const MegaDropdown = ({ link, path }) => {
     <>
       <button
         onClick={(_) => setOpen(!open)}
-        className={`text-content-light dark:text-content-dark flex w-full items-baseline gap-x-1 whitespace-nowrap rounded px-3 py-0.5 outline-none transition-all focus:outline-none focus:ring-2 focus:ring-primary/25 focus:ring-offset-2 focus:ring-offset-light dark:focus:ring-offset-dark lg:w-auto ${open ? "pointer-events-none bg-primary/15" : "hover:bg-primary/15"}`}
+        className={`flex w-full items-baseline gap-x-1 whitespace-nowrap rounded px-3 py-0.5 text-content-light outline-none transition-all focus:outline-none focus:ring-2 focus:ring-primary/25 focus:ring-offset-2 focus:ring-offset-light dark:text-content-dark dark:focus:ring-primary-light/25 dark:focus:ring-offset-dark lg:w-auto ${open ? "pointer-events-none bg-primary/15" : "hover:bg-primary/15"}`}
       >
         {link?.title}
         <BsChevronDoubleDown
@@ -46,10 +46,10 @@ const MegaDropdown = ({ link, path }) => {
               {link.menu.map((col, _) => {
                 return (
                   <ul
-                    className={`dark:text-content-dark w-full border-e p-5 pt-3 text-sm text-primary-dark last-of-type:border-e-0 lg:w-1/4`}
+                    className={`w-full border-e p-5 pt-3 text-sm text-primary-dark last-of-type:border-e-0 dark:text-content-dark lg:w-1/4`}
                     key={col.title}
                   >
-                    <span className="text-content-light/ dark:text-content-dark/75 inline-block px-4 py-2 text-lg font-bold uppercase">
+                    <span className="text-content-light/ inline-block px-4 py-2 text-lg font-bold uppercase dark:text-content-dark/75">
                       {col.title}
                     </span>
                     <ul className="border-right flex flex-col">

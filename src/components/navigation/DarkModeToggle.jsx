@@ -17,11 +17,11 @@ const DarkModeToggle = () => {
 
   return (
     <button
-      className={`order-1 flex w-10 rounded-full border border-primary p-[3px] ${currentTheme === "dark" ? "justify-end" : "justify-start"}`}
+      className={`order-1 flex w-10 rounded-full border border-primary p-[3px] dark:border-light ${currentTheme === "dark" ? "justify-end" : "justify-start"}`}
       onClick={() => setTheme(currentTheme === "dark" ? "light" : "dark")}
     >
       <motion.div
-        className="h-4 w-4 rounded-full bg-primary"
+        className="h-4 w-4 rounded-full bg-primary dark:bg-light"
         layout
         transition={{
           type: "spring",

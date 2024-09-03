@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "../primitives/Link";
 import { useRouter } from "next/navigation";
 
@@ -13,13 +12,7 @@ const IconTop = ({ service }) => {
       className={`group h-full w-full transition-colors ${link ? "cursor-pointer" : "cursor-default"}`}
       onClick={link && (() => router.push(link))}
     >
-      <Image
-        src={icon}
-        alt=""
-        width="48px"
-        height="48px"
-        className="mb-3 size-12"
-      />
+      <div className="mb-3 size-12">{icon}</div>
       <h4 className="mb-1 text-lg font-bold">{title}</h4>
       <p className="mb-1 text-base">{description}</p>
       {link && (

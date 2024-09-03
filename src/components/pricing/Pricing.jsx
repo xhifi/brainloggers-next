@@ -11,7 +11,7 @@ import TechnicalSupport from "@/static/images/icons/support.svg";
 const Pricing = () => {
   return (
     <div className="">
-      <div className="overflow-hidden rounded-lg border-2 border-primary shadow-2xl">
+      <div className="overflow-hidden rounded-lg border-2 border-primary shadow-2xl dark:border-primary-light">
         <div className="flex flex-wrap md:[&>*:nth-child(3)]:border-b-0 md:[&>*:nth-child(odd)]:border-e-2 [&>*]:border-b-2 lg:[&>*]:border-b-0 lg:[&>*]:border-e-2">
           <PriceCard
             title="Web Design & Dev"
