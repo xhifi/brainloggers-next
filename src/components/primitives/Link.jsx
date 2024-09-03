@@ -1,4 +1,9 @@
+"use client";
+
 import NLink from "next/link";
+import { motion } from "framer-motion";
+import { forwardRef } from "react";
+
 /**
  * @param {string} href - The URL of the link
  * @param {string} children - The text content of the link
@@ -24,7 +29,7 @@ import NLink from "next/link";
  *
  * // This will render an external link
  */
-const Link = ({ href, children, ...rest }) => {
+const Link = forwardRef(({ href, children, ...rest }, ref) => {
   // if link is external, use anchor tag
   // else use next/link
 
@@ -34,16 +39,23 @@ const Link = ({ href, children, ...rest }) => {
 
   if (href.startsWith("http")) {
     return (
-      <a href={href} target="blank" rel="noopener noreferrer" {...rest}>
+      <a
+        href={href}
+        ref={ref}
+        target="blank"
+        rel="noopener noreferrer"
+        {...rest}
+      >
         {children}
       </a>
     );
   }
   return (
-    <NLink href={href} {...rest}>
+    <NLink ref={ref} href={href} {...rest}>
       {children}
     </NLink>
   );
-};
+});
+Link.displayName = "Link";
 
-export default Link;
+export default motion(Link);

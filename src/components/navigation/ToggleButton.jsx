@@ -1,13 +1,16 @@
 "use client";
 
-const ToggleButton = () => {
+const ToggleButton = ({ id }) => {
+  const toggleMenu = (e) => {
+    document.body.classList.toggle("overflow-hidden");
+    const nav = document?.getElementById(id);
+    nav?.classList?.toggle("hidden");
+  };
+
   return (
     <button
-      className="ms-auto rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 lg:hidden"
-      onClick={(e) => {
-        const nav = document.getElementById("site-nav");
-        nav.classList.toggle("translate-x-full");
-      }}
+      className="order-2 ms-auto rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 lg:hidden"
+      onClick={toggleMenu}
     >
       <span className="sr-only">Toggle Navigation</span>
       <svg
