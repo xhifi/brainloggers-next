@@ -1,6 +1,6 @@
 import { Roboto } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
-
+import { SpeedInsights } from "@vercel/speed-insights/next";
 const roboto = Roboto({
   subsets: ["latin", "cyrillic"],
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -27,6 +27,7 @@ export default function RootLayout({ children }) {
         <ContextsProvider>{children}</ContextsProvider>
         <CookieConsent />
       </body>
+      <SpeedInsights />
       <Script
         src="https://embed.tawk.to/5d7abb28c22bdd393bb59796/default"
         strategy="worker"
