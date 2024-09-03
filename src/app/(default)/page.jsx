@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import Hero from "@/components/hero/Hero";
+import Hero from "../../components/hero/Hero";
 import Carousel from "@/components/cards-carousel/Carousel";
 import Card from "@/components/cards-carousel/Card";
 
