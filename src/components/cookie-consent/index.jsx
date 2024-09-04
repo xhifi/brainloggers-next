@@ -78,18 +78,12 @@ const CookieConsent = () => {
                 duration: 0.6,
               },
             }}
-            className="fixed bottom-0 left-0 z-[999] w-full rounded bg-warning p-8"
+            className="fixed bottom-0 left-0 z-[999] w-full rounded-t-xl bg-warning p-8"
           >
-            <Button
-              className="absolute right-8 top-8 px-0 py-0"
-              onClick={() => setCookieConsent("granted")}
-            >
-              <BsX className="size-8" />
-            </Button>
             <div className="mb-4 space-y-2">
               <h4>Before continuing on our website</h4>
               <p>Brainloggers uses cookies and data to:</p>
-              <ul className="ms-6 list-outside list-disc decoration-dark">
+              <ul className="list-inside list-disc decoration-dark">
                 <li>
                   Provide and manage services, for example to monitor service
                   interruptions and protect you from spam, fraudulent and
@@ -100,24 +94,29 @@ const CookieConsent = () => {
                   how our services are used
                 </li>
               </ul>
-              <p>
-                If you wish, you can click on Block Cookies to reject cookies
-                for personalization and browser-level information
-              </p>
             </div>
-            <div className="flex w-full items-center justify-between">
-              <div className="space-x-2">
-                <Button onClick={() => setCookieConsent("granted")}>
-                  I accept
+            <div className="flex w-full flex-col items-center justify-between gap-y-2 md:flex-row md:gap-y-0">
+              <div className="flex w-full space-x-2 md:w-auto">
+                <Button
+                  onClick={() => setCookieConsent("granted")}
+                  className={"w-full"}
+                >
+                  Accept
                 </Button>
-                <Button onClick={() => setCookieConsent("denied")}>
-                  Reject Cookies
+                <Button
+                  onClick={() => setCookieConsent("denied")}
+                  className={"w-full"}
+                >
+                  Reject
                 </Button>
               </div>
-              <div>
-                <Link href="/">Privacy</Link>
-                <span className="mx-2">|</span>
-                <Link href="/">Terms</Link>
+              <div className="divide-x-2 divide-primary/25">
+                <Link href="/" className="px-2">
+                  Privacy Policy
+                </Link>
+                <Link href="/" className="px-2">
+                  GDPR Acknowledgement
+                </Link>
               </div>
             </div>
           </motion.div>

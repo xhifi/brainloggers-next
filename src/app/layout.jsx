@@ -18,6 +18,7 @@ export const metadata = {
   description:
     "Web Designers, Graphic Designers, & Developers | IT Solutions Providers and Digital Marketing Agency",
 };
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
