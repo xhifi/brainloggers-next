@@ -11,6 +11,7 @@ import "./globals.css";
 import ContextsProvider from "@/contexts/ContextsProvider";
 import Script from "next/script";
 import CookieConsent from "@/components/cookie-consent";
+import LenisWrapper from "@/components/LenisWrapper";
 
 export const metadata = {
   title: "Brainloggers",
@@ -24,14 +25,12 @@ export default function RootLayout({ children }) {
       <body
         className={`${roboto.variable}relative overflow-x-hidden bg-light text-dark dark:bg-dark dark:text-light`}
       >
-        <ContextsProvider>{children}</ContextsProvider>
+        <ContextsProvider>
+          <LenisWrapper>{children}</LenisWrapper>
+        </ContextsProvider>
         <CookieConsent />
+        <SpeedInsights />
       </body>
-      <SpeedInsights />
-      <Script
-        src="https://embed.tawk.to/5d7abb28c22bdd393bb59796/default"
-        strategy="worker"
-      />
     </html>
   );
 }

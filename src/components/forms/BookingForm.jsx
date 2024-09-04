@@ -10,7 +10,7 @@ import PeopleCommunicating from "@/static/images/decorations/illustrations/peopl
 
 const BookingForm = () => {
   return (
-    <div className="relative">
+    <div className="relative w-full">
       <Image
         src={Poly1}
         alt=""
@@ -20,12 +20,12 @@ const BookingForm = () => {
         aria-hidden="true"
         className="-z-1 pointer-events-none absolute -bottom-24 -right-[90px] size-1/2 select-none opacity-10 lg:animate-[bounce_5s_linear_900ms_infinite]"
       />
-      <div className="wrap relative z-10 flex min-w-0 flex-col rounded-xl border-2 border-primary-light bg-light bg-clip-border text-dark shadow-2xl shadow-black/55 ring-offset-2 ring-offset-primary transition-all focus-within:ring-2 dark:bg-dark dark:text-light/80 lg:w-[29rem]">
+      <div className="wrap relative z-10 flex flex-col rounded-xl border-2 border-primary-light bg-light bg-clip-border text-dark shadow-2xl shadow-black/55 ring-offset-2 ring-offset-primary transition-all focus-within:ring-2 dark:bg-dark dark:text-light/80 lg:w-[29rem]">
         <div className="relative p-8">
-          <div className="flex flex-row flex-nowrap items-center gap-x-9">
+          <div className="flex flex-col flex-nowrap items-center gap-y-4 md:flex-row md:gap-x-9 md:gap-y-0">
             <div className="text-dark dark:text-light/80">
               <h5 className="font-bold">Got an app in mind?</h5>
-              <p>
+              <p className="hidden md:visible">
                 Let&apos;s see what challenge you bring to the table this time
               </p>
             </div>
@@ -37,19 +37,19 @@ const BookingForm = () => {
           </div>
           <form className="space-y-3">
             <div>
-              <Input label="Your Full Name" size="lg" />
+              <Input label="Full Name" size="lg" />
             </div>
             <div>
-              <Input label="Your Email" size="lg" />
+              <Input label="Email" size="lg" />
             </div>
             <div>
-              <Input label="Your Phone Number" size="lg" />
+              <Input label="Phone Number" size="lg" />
             </div>
             <div>
               <Textarea
                 className="block w-full"
                 rows="4"
-                label="Your Requirements"
+                label="Requirements"
                 placeholder="Message..."
               />
             </div>

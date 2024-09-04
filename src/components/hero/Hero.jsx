@@ -60,8 +60,8 @@ function Hero() {
               </Button>
             </div>
           </div>
-          <div className="flex flex-row flex-nowrap gap-x-8">
-            <div className="mt-8 flex w-1/2 flex-row flex-nowrap items-center gap-x-4">
+          <div className="flex flex-col flex-nowrap gap-x-8 sm:flex-row">
+            <div className="mt-8 flex w-full flex-row flex-nowrap items-center gap-x-4 sm:w-1/2">
               <div className="relative size-12">
                 <Image
                   src={CommunicationIcon}
@@ -75,7 +75,7 @@ function Hero() {
                 <p className="lg:mb-0">Response Time</p>
               </div>
             </div>
-            <div className="mt-8 flex w-1/2 flex-row flex-nowrap items-center gap-x-4">
+            <div className="z-10 mt-8 flex w-full flex-row flex-nowrap items-center gap-x-4 sm:w-1/2">
               <div className="relative size-12">
                 <Image
                   src={ResponseRateIcon}
@@ -88,19 +88,13 @@ function Hero() {
                 href="https://www.google.com/maps/place/Brainloggers+Web+%26+Graphic+Designers+and+IT+Consultants/@51.4214364,-0.1327431,17z/data=!4m8!3m7!1s0x4876068541ec0001:0x3f9fa2f12b7170d5!8m2!3d51.4214331!4d-0.1301682!9m1!1b1!16s%2Fg%2F11fjtkp_lr?entry=ttu&g_ep=EgoyMDI0MDgyMy4wIKXMDSoASAFQAw%3D%3D"
                 className="text-md text-white"
               >
-                <div
-                  className="mb-1"
-                  role="img"
-                  aria-label="5.0 stars grayscale-100 saturation-0"
-                >
-                  <RatingStars />
-                </div>
+                <RatingStars />
                 <p className="lg:mb-0">Google Reviews</p>
               </Link>
             </div>
           </div>
         </div>
-        <div className="mt-6 flex justify-center lg:mt-0 lg:w-1/2">
+        <div className="mt-6 flex w-auto justify-center md:w-1/2 lg:mt-0">
           <BookingForm />
         </div>
       </div>

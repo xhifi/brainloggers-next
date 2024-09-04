@@ -4,15 +4,19 @@ import Image from "next/image";
 import Star from "@/static/images/icons/star-yellow.png";
 
 const RatingStars = () => {
-  return [...new Array(5)].map((_, index) => {
-    return (
-      <Image
-        src={Star}
-        key={"star" + index}
-        alt="star"
-        className="inline-block"
-      />
-    );
-  });
+  return (
+    <div className="flex flex-shrink items-center">
+      {[...new Array(5)].map((_, index) => {
+        return (
+          <Image
+            src={Star}
+            key={index}
+            alt=""
+            className="inline h-auto w-auto"
+          />
+        );
+      })}
+    </div>
+  );
 };
 export default RatingStars;
