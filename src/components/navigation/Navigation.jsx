@@ -6,6 +6,7 @@ import BrandLogo from "./BrandLogo";
 import NavLinks from "./NavLinks";
 import NavigationSocial from "./NavigationSocial";
 import { useEffect, useRef, useState } from "react";
+import useWindowSize from "@/hooks/useWindowSize";
 
 const data = [
   {
@@ -76,6 +77,7 @@ const data = [
 
 const AppNavigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { width } = useWindowSize();
 
   useEffect(() => {
     if (menuOpen) {
@@ -87,10 +89,10 @@ const AppNavigation = () => {
 
   useEffect(() => {
     // if device width is greater than 768px open the menu
-    if (window.innerWidth > 768) {
+    if (width > 768) {
       setMenuOpen(true);
     }
-  }, [window.innerWidth]);
+  }, [width]);
 
   return (
     <>
