@@ -11,13 +11,22 @@ import Button from "../primitives/Button";
 import { BsTelephoneFill } from "react-icons/bs";
 import IconsScroll from "@/components/icons-scroll/IconScroll";
 import Decor1 from "@/static/images/decorations/shape1.png";
+import GradientMesh from "@/static/images/decorations/gradient-mesh-1.jpg";
 
 function Hero() {
   return (
-    <section className="bg-grid-black/[0.1] relative overflow-hidden bg-primary pb-10 pt-10 shadow-2xl dark:bg-primary-dark lg:pt-20">
+    <section className="bg-grid-black/[0.1] relative -top-12 overflow-hidden bg-primary pb-10 pt-10 shadow-2xl dark:bg-primary-dark lg:pt-20">
+      <Image
+        src={GradientMesh}
+        alt=""
+        role="presentation"
+        aria-hidden="true"
+        quality={2}
+        placeholder="blur"
+        className="w-100 h-100 pointer-events-none absolute left-0 top-0 z-0 rotate-90 scale-150 select-none blur-2xl dark:brightness-50 md:rotate-0"
+      />
       <div className="absolute -top-44 right-64 h-[2000px] w-96 rotate-[22deg] bg-gradient-to-l from-transparent via-light to-transparent px-44 opacity-15 blur-xl lg:px-6" />
-
-      <div className="z-10 mb-20 flex flex-col flex-nowrap justify-center gap-x-24 px-6 lg:flex-row lg:items-center lg:px-44">
+      <div className="z-10 mb-20 mt-12 flex flex-col flex-nowrap justify-center gap-x-24 px-6 lg:flex-row lg:items-center lg:px-44">
         <div className="flex flex-col flex-nowrap justify-center lg:w-1/2 lg:pr-8">
           <div className="relative">
             <Image
@@ -48,19 +57,22 @@ function Hero() {
               digital solutions & experiences for your business. We are here to
               help you grow your business online.
             </p>
-            <div className="flex">
+            <div className="mt-4 flex flex-wrap items-center gap-4">
               <Button
-                intent="primary"
+                intent="light"
                 size="xl"
-                className="mt-4 w-auto bg-warning text-primary"
+                className="w-auto bg-light/75 saturate-150 hover:bg-light focus:bg-light"
               >
                 <span className="flex items-center space-x-2 px-2 font-bold">
                   <BsTelephoneFill /> <span>+44 20 3995 4105</span>
                 </span>
               </Button>
+              <p className="text-lg text-light">
+                Zero cost initial consultation
+              </p>
             </div>
           </div>
-          <div className="flex flex-col flex-nowrap gap-x-8 sm:flex-row">
+          <div className="z-10 flex flex-col flex-nowrap gap-x-8 sm:flex-row">
             <div className="mt-8 flex w-full flex-row flex-nowrap items-center gap-x-4 sm:w-1/2">
               <div className="relative size-12">
                 <Image

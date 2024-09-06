@@ -1,12 +1,5 @@
-import Layout from "@/static/images/icons/layout.svg";
-import Code from "@/static/images/icons/code.svg";
-import PeopleCommunicating from "@/static/images/decorations/illustrations/people-communicating.svg";
-import Network from "@/static/images/icons/network.svg";
-import SecurityAudit from "@/static/images/icons/security-audit.svg";
-import CCTV from "@/static/images/icons/cctv.svg";
-import { DataArrayTexture } from "three";
-
 import icons from "@/static/images/icons/icons";
+
 const data = [
   {
     title: "Web Apps Development",

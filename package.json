@@ -10,6 +10,7 @@
     "git-cache": "git rm -r --cached . && git add --all ."
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.0",
     "@next/third-parties": "^14.2.7",
     "@splinetool/react-spline": "^4.0.0",
     "@vercel/speed-insights": "^1.0.12",
@@ -27,7 +28,8 @@
     "sharp": "^0.33.5",
     "tailwind-merge": "^2.5.2",
     "three": "^0.167.1",
-    "typed.js": "^2.1.0"
+    "typed.js": "^2.1.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@builder.io/partytown": "^0.10.2",

@@ -10,7 +10,7 @@ import {
 } from "react-icons/bs";
 
 const inputStyles = cva(
-  "block w-full bg-white/50 dark:bg-dark/70 border-2 px-4 py-1 transition-all placeholder:text-foreground/50 focus:bg-background focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
+  "block w-full bg-light dark:bg-dark border-2 px-4 py-1 transition-all placeholder:text-foreground/50 focus:bg-background focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50",
   {
     variants: {
       intent: {
@@ -103,18 +103,18 @@ const Input = forwardRef(function Input(
           {...props}
         />
         {intent === "error" && (
-          <BsXCircleFill className="absolute inset-y-0 bottom-1/2 right-2 top-1/2 flex h-5 w-5 -translate-y-1/2 items-center fill-error" />
+          <BsXCircleFill className="absolute inset-y-0 right-2 top-2 flex h-5 w-5 items-center fill-error" />
         )}
         {intent === "success" && (
-          <BsCheckCircleFill className="absolute inset-y-0 bottom-1/2 right-2 top-1/2 flex h-5 w-5 -translate-y-1/2 items-center fill-success" />
+          <BsCheckCircleFill className="absolute inset-y-0 right-2 top-2 flex h-5 w-5 items-center fill-success" />
         )}
         {intent === "warning" && (
           <BsFillExclamationCircleFill className="absolute inset-y-0 bottom-1/2 right-2 top-1/2 flex h-5 w-5 -translate-y-1/2 items-center fill-warning" />
         )}
       </div>
-      {error && <p className="text-sm text-error">{error}</p>}
-      {success && <p className="text-sm text-success">{success}</p>}
-      {warning && <p className="text-sm text-warning">{warning}</p>}
+      {error && <p className="ms-4 mt-1 text-sm text-error">{error}</p>}
+      {success && <p className="ms-4 mt-1 text-sm text-success">{success}</p>}
+      {warning && <p className="ms-4 mt-1 text-sm text-warning">{warning}</p>}
     </>
   );
 });

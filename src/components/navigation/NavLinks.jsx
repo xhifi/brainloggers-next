@@ -15,7 +15,7 @@ const NavLinks = ({ links, menu: { menuRef, setMenuOpen } }) => {
         transition={{ duration: 0.25 }}
         ref={menuRef}
         id="site-nav"
-        className="space-between fixed bottom-0 left-0 -z-10 hidden h-[calc(100vh-2.75rem)] w-full grow-[1] basis-auto items-center gap-x-2 space-y-1 overflow-y-scroll bg-light p-6 text-dark transition-colors dark:bg-dark dark:text-light lg:static lg:ml-12 lg:mt-0 lg:flex lg:h-auto lg:w-auto lg:flex-row lg:flex-wrap lg:space-y-0 lg:overflow-visible lg:p-0"
+        className="space-between fixed bottom-0 left-0 -z-10 hidden h-[calc(100vh-2.75rem)] w-full grow-[1] basis-auto items-center gap-x-2 space-y-1 overflow-y-scroll p-6 text-dark transition-colors dark:text-light lg:static lg:ml-12 lg:mt-0 lg:flex lg:h-auto lg:w-auto lg:flex-row lg:flex-wrap lg:space-y-0 lg:overflow-visible lg:p-0"
       >
         {links.map((link) => {
           const isActive = pathname === link.href;

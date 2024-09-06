@@ -1,9 +1,8 @@
 import Image from "next/image";
 
-import Hero from "../../components/hero/Hero";
+import Hero from "@/components/hero/Hero";
 import Carousel from "@/components/cards-carousel/Carousel";
 import Card from "@/components/cards-carousel/Card";
-
 import IconGroups from "@/components/icon-groups/IconGroup";
 import faqs from "@/static/data/faqs";
 import Spacer from "@/components/primitives/Spacer";
@@ -11,9 +10,10 @@ import Pricing from "@/components/pricing/Pricing";
 import FeatureIndex from "@/components/feature/Feature";
 import ContactInfo from "@/components/contact/ContactInfo";
 import SectionHeading from "@/components/primitives/SectionHeading";
+import AccordionGroup from "@/components/faq/AccordionGroup";
 
 import CornerStructure from "@/static/images/decorations/illustrations/corner-struct.svg";
-import AccordionGroup from "@/components/faq/AccordionGroup";
+import Laptop from "@/static/images/feature/laptop.jpg";
 
 export default function Home() {
   const cards = data.map((card, index) => (
@@ -38,15 +38,23 @@ export default function Home() {
 
       <Spacer />
 
-      <section className="relative bg-primary px-6 py-16 text-light shadow-2xl dark:bg-primary-dark">
+      <section className="relative overflow-hidden bg-light px-6 py-16 text-dark shadow-2xl dark:bg-primary-dark md:text-light">
         <Image
           src={CornerStructure}
-          className="absolute left-0 top-0"
+          className="absolute left-0 top-0 z-[1]"
           alt=""
           aria-hidden="true"
           role="presentation"
         />
-
+        <Image
+          placeholder="blur"
+          src={Laptop}
+          quality={2}
+          alt=""
+          role="presentation"
+          aria-hidden="true"
+          className="absolute -bottom-24 right-0 z-0 -rotate-90 scale-150 blur-3xl md:bottom-0"
+        />
         <FeatureIndex />
       </section>
 

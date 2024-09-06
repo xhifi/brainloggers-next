@@ -82,7 +82,7 @@ const AppNavigation = () => {
     <>
       <NavigationSocial />
 
-      <header className="sticky top-0 z-50 flex items-center border-b bg-light text-dark shadow transition-colors dark:border-primary-light dark:bg-dark dark:text-light">
+      <header className="sticky left-0 right-0 top-0 z-50 flex h-12 items-center border-b bg-light/50 text-dark shadow backdrop-blur-lg dark:border-primary-light dark:bg-dark/50 dark:text-light">
         <div className="w-full px-6 lg:px-6">
           <nav className="relative z-10 box-border flex w-full basis-full flex-wrap items-center py-2">
             <BrandLogo width={160} color="dark" className="transition-none" />

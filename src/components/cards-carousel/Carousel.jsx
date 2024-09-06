@@ -74,7 +74,7 @@ export const Carousel = ({ items, initialScroll = 0 }) => {
           ))}
         </div>
       </div>
-      <div className="mr-10 flex justify-center gap-2 lg:justify-end">
+      <div className="flex justify-start gap-2 lg:mr-10 lg:justify-end">
         <Button
           intent="primary-outline"
           className={`items-center justify-center border-primary bg-warning disabled:opacity-50`}

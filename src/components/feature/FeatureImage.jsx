@@ -5,12 +5,11 @@ import Image from "next/image";
 const FeatureImage = ({ src, alt, origin, height, delay }) => {
   return (
     <motion.div
-      initial={{ scale: 0, transformOrigin: origin }}
+      initial={{ scale: 0.8, transformOrigin: origin }}
       whileInView={{ scale: 1, transformOrigin: origin }}
       viewport={{ once: true }}
       transition={{
         duration: 0.4,
-        ease: "linear",
         delay: delay,
       }}
       style={{ height: height }}
@@ -21,6 +20,7 @@ const FeatureImage = ({ src, alt, origin, height, delay }) => {
         alt={alt}
         className="relative h-full object-cover"
         placeholder="blur"
+        quality={50}
       />
     </motion.div>
   );

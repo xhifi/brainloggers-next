@@ -59,7 +59,7 @@ const Accordion = ({ index, question, children, onClick, open }) => {
     >
       <button
         className={cx(
-          "question flex w-full cursor-pointer flex-row items-center justify-between rounded bg-transparent px-6 py-3 text-left transition-all hover:bg-primary hover:text-light",
+          "question flex w-full cursor-pointer flex-row items-start justify-between rounded bg-transparent px-6 py-3 text-left transition-all hover:bg-primary hover:text-light",
           open && "bg-primary text-light",
         )}
         onClick={onClick && (() => onClick())}
@@ -67,26 +67,25 @@ const Accordion = ({ index, question, children, onClick, open }) => {
         aria-expanded={open}
         tabIndex={index}
       >
-        <p className={`text-base font-bold`}>{question}</p>
+        <span className={`text-base font-bold`}>{question}</span>
         <motion.span
+          className="relative ms-3 block size-5 justify-center"
           layout
           variants={buttonVariants}
           animate={open ? "open" : "closed"}
         >
-          <span className="relative block size-5 justify-center">
-            <div
-              className={`absolute top-1/2 m-auto block h-1 w-full -translate-y-1/2 rounded-lg ${open ? "bg-light" : "bg-primary group-hover:bg-light"} `}
-            />
-            <motion.div
-              variants={buttonInnerVariants}
-              initial={{ translateX: "-50%" }}
-              animate={open ? "open" : "closed"}
-              transition={{
-                duration: 0.1,
-              }}
-              className={`absolute left-1/2 block h-full w-1 -translate-x-1/2 rounded-lg ${open ? "bg-light" : "bg-primary group-hover:bg-light"}`}
-            />
-          </span>
+          <div
+            className={`absolute top-1/2 m-auto block h-1 w-full -translate-y-1/2 rounded-lg ${open ? "bg-light" : "bg-primary group-hover:bg-light"} `}
+          />
+          <motion.div
+            variants={buttonInnerVariants}
+            initial={{ translateX: "-50%" }}
+            animate={open ? "open" : "closed"}
+            transition={{
+              duration: 0.1,
+            }}
+            className={`absolute left-1/2 block h-full w-1 -translate-x-1/2 rounded-lg ${open ? "bg-light" : "bg-primary group-hover:bg-light"}`}
+          />
         </motion.span>
       </button>
       <AnimatePresence>
