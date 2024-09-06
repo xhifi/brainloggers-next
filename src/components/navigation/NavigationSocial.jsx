@@ -12,7 +12,7 @@ import Link from "../primitives/Link";
 
 const NavigationSocial = () => {
   return (
-    <div className="relative isolate z-50 hidden items-center border-b bg-light text-content-light transition-colors dark:border-primary-light dark:bg-dark dark:text-content-dark dark:text-light lg:block">
+    <div className="relative isolate z-50 hidden items-center bg-light text-content-light transition-colors dark:border-primary-light dark:bg-dark dark:text-content-dark dark:text-light lg:block">
       <div className="flex items-center px-6 py-1">
         <div className="inline-block">
           <ul className="flex items-center gap-x-4">

@@ -41,8 +41,8 @@ export default function Home() {
       <section className="relative overflow-hidden bg-light px-6 py-16 text-dark shadow-2xl dark:bg-primary-dark md:text-light">
         <Image
           src={CornerStructure}
-          className="absolute left-0 top-0 z-[1]"
-          alt=""
+          className="pointer-events-none absolute left-0 top-0 z-[1] select-none"
+          alt="decoration image"
           aria-hidden="true"
           role="presentation"
         />

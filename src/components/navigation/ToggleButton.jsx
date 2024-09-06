@@ -1,32 +1,25 @@
 "use client";
 
-const ToggleButton = ({ id }) => {
+import { BsCaretDown, BsCaretDownFill, BsCaretUpFill } from "react-icons/bs";
+
+const ToggleButton = ({ menu }) => {
+  const { menuOpen, setMenuOpen } = menu;
+
   const toggleMenu = (e) => {
-    document.body.classList.toggle("overflow-hidden");
-    const nav = document?.getElementById(id);
-    nav?.classList?.toggle("hidden");
+    setMenuOpen(!menuOpen);
   };
 
   return (
     <button
-      className="order-2 ms-auto rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 lg:hidden"
+      className="relative order-2 ms-auto rounded-md transition-all focus:outline-none focus:ring-2 focus:ring-sky-300 focus:ring-offset-2 lg:hidden"
       onClick={toggleMenu}
     >
       <span className="sr-only">Toggle Navigation</span>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M4 6h16M4 12h16m-7 6h7"
-        />
-      </svg>
+      {menuOpen ? (
+        <BsCaretUpFill className="size-8" />
+      ) : (
+        <BsCaretDownFill className="size-8" />
+      )}
     </button>
   );
 };

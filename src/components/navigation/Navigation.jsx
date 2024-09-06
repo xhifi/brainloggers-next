@@ -5,7 +5,7 @@ import ToggleButton from "./ToggleButton";
 import BrandLogo from "./BrandLogo";
 import NavLinks from "./NavLinks";
 import NavigationSocial from "./NavigationSocial";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const data = [
   {
@@ -76,23 +76,33 @@ const data = [
 
 const AppNavigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const menuRef = useRef(null);
+
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  });
+
+  useEffect(() => {
+    // if device width is greater than 768px open the menu
+    if (window.innerWidth > 768) {
+      setMenuOpen(true);
+    }
+  }, [window.innerWidth]);
 
   return (
     <>
       <NavigationSocial />
 
-      <header className="sticky left-0 right-0 top-0 z-50 flex h-12 items-center border-b bg-light/50 text-dark shadow backdrop-blur-lg dark:border-primary-light dark:bg-dark/50 dark:text-light">
+      <header className="sticky -top-[1px] left-0 right-0 z-50 flex h-12 items-center bg-light/50 text-dark shadow backdrop-blur-lg dark:border-primary-light dark:bg-dark/50 dark:text-light">
         <div className="w-full px-6 lg:px-6">
           <nav className="relative z-10 box-border flex w-full basis-full flex-wrap items-center py-2">
             <BrandLogo width={160} color="dark" className="transition-none" />
-
-            <NavLinks links={data} menu={{ menuRef, setMenuOpen }} />
+            <NavLinks links={data} menu={{ menuOpen, setMenuOpen }} />
             <div className="z-10 ml-auto flex items-center gap-x-2">
-              <ToggleButton
-                id="site-nav"
-                menu={{ menuOpen, setMenuOpen, menuRef }}
-              />
+              <ToggleButton menu={{ menuOpen, setMenuOpen }} />
               <DarkModeToggle />
             </div>
           </nav>
