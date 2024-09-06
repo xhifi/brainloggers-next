@@ -10,7 +10,7 @@ import {
 } from "react-icons/bs";
 
 const textareaStyles = cva(
-  "block w-full bg-light dark:bg-dark/50 border-2 px-4 py-1 transition-all placeholder:text-dark/50 dark:placeholder:text-light/50 focus:bg-background focus:outline-none focus:ring-4 focus:ring-offset-2",
+  "block w-full bg-light dark:bg-dark/50 border-2 px-4 py-1 transition-all placeholder:text-dark/50 dark:placeholder:text-light/50 focus:bg-background focus:outline-none focus:ring-4 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none",
   {
     variants: {
       intent: {

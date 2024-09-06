@@ -9,7 +9,7 @@ const button = cva(
     variants: {
       intent: {
         primary:
-          "bg-primary text-light hover:text-white focus:ring-secondary/15",
+          "bg-primary text-light hover:bg-primary-light focus:ring-secondary/15",
         "primary-gradient":
           "bg-gradient-to-b from-primary-light to-primary-dark text-primary-content hover:text-white transition-colors focus:outline-none focus:ring-4 focus:ring-secondary/15 focus:ring-opacity-50 focus:ring-offset-2",
         "primary-outline":
@@ -18,6 +18,9 @@ const button = cva(
           "bg-secondary text-content-light hover:text-white focus:ring-secondary-light/25",
         "secondary-outline":
           "border-secondary border-2 hover:bg-secondary hover:text-white focus:ring-secondary-light/25",
+        error: "bg-error text-light hover:text-white focus:ring-error/25",
+        warning: "bg-warning text-dark hover:text-white focus:ring-warning/25",
+        success: "bg-success text-light hover:text-white focus:ring-success/25",
         disabled:
           "bg-gray-400 text-gray-400-content cursor-not-allowed pointer-events-none",
       },

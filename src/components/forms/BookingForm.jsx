@@ -3,13 +3,17 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 
+import useLocalStorage from "@/hooks/useLocalStorage";
+
 import Image from "next/image";
 import Input from "../primitives/forms/Input";
 import Textarea from "../primitives/forms/Textarea";
 import Button from "../primitives/Button";
 import Poly1 from "@/static/images/decorations/poly-pattern-1.svg";
-
 import PeopleCommunicating from "@/static/images/decorations/illustrations/people-communicating.svg";
+import sendMail from "./actions/sendMail";
+import { useState } from "react";
+import { BsRecycle } from "react-icons/bs";
 
 const bookingSchema = z.object({
   email: z
@@ -36,17 +40,43 @@ const bookingSchema = z.object({
 });
 
 const BookingForm = () => {
+  const [booking, setBooking] = useLocalStorage("booking", {});
+  const [status, setStatus] = useState("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
+    defaultValues: {
+      name: booking?.name,
+      email: booking?.email,
+      ph: booking?.ph,
+      message: booking?.message,
+    },
     resolver: zodResolver(bookingSchema),
     mode: "onBlur",
   });
 
-  const onSubmit = (data) => console.log(data);
-  console.log(errors);
+  const onSubmit = async (data) => {
+    const { name, email, ph, message } = data;
+    setErrorMessage("");
+    setStatus("submitting");
+    const confirmation = await sendMail({ name, email, ph, message });
+
+    if (!confirmation.booked) {
+      setStatus("error");
+      setErrorMessage(confirmation.error);
+      return;
+    }
+    if (confirmation.booked) {
+      setBooking(confirmation);
+      setStatus("success");
+      return;
+    }
+  };
 
   return (
     <div className="relative w-full">
@@ -82,6 +112,7 @@ const BookingForm = () => {
                 size="lg"
                 intent={errors.name ? "error" : "default"}
                 error={errors.name?.message}
+                disabled={status === "success" || booking?.booked}
                 {...register("name", { required: true })}
               />
             </div>
@@ -92,6 +123,7 @@ const BookingForm = () => {
                 size="lg"
                 intent={errors.email ? "error" : "default"}
                 error={errors.email?.message}
+                disabled={status === "success" || booking?.booked}
                 {...register("email", { required: true })}
               />
             </div>
@@ -102,6 +134,7 @@ const BookingForm = () => {
                 size="lg"
                 intent={errors.ph ? "error" : "default"}
                 error={errors.ph?.message}
+                disabled={status === "success" || booking?.booked}
                 {...register("ph", { required: true })}
               />
             </div>
@@ -114,12 +147,57 @@ const BookingForm = () => {
                 placeholder="I need a new suit..."
                 intent={errors.message ? "error" : "default"}
                 error={errors.message?.message}
-                {...register("Message", { required: true })}
+                disabled={status === "success" || booking?.booked}
+                {...register("message", { required: true })}
               />
             </div>
-            <Button className="mt-3 w-full" size="lg" intent="primary">
-              Submit
-            </Button>
+            <div className="mt-3 flex items-center">
+              {status === "submitting" ? (
+                <Button
+                  className="pointer-events-none w-full"
+                  size="lg"
+                  intent="warning"
+                >
+                  Submitting
+                </Button>
+              ) : status === "success" || booking?.booked ? (
+                <>
+                  <Button
+                    className="pointer-events-none w-full"
+                    size="lg"
+                    intent="success"
+                  >
+                    Booked at -
+                    <span className="ms-1">
+                      {new Intl.DateTimeFormat("en-GB", {
+                        dateStyle: "full",
+                      }).format(booking?.date)}
+                    </span>
+                  </Button>
+                  <Button
+                    className="ms-3 h-full px-2 py-2"
+                    onClick={() => {
+                      reset();
+                      setStatus("idle");
+                      setBooking(null);
+                    }}
+                  >
+                    <BsRecycle className="block size-6" />
+                  </Button>
+                </>
+              ) : (
+                <Button
+                  className="w-full"
+                  size="lg"
+                  intent={status === "error" ? "error" : "primary"}
+                >
+                  {status === "error" ? "Submit Again" : "Submit"}
+                </Button>
+              )}
+            </div>
+            {errorMessage && (
+              <p className="text-center text-error">{errorMessage}</p>
+            )}
           </form>
         </div>
       </div>
