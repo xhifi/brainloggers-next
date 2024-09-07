@@ -59,7 +59,7 @@ const Accordion = ({ index, question, children, onClick, open }) => {
     >
       <button
         className={cx(
-          "question flex w-full cursor-pointer flex-row items-start justify-between rounded bg-transparent px-6 py-3 text-left transition-all hover:bg-primary hover:text-light",
+          "question flex w-full cursor-pointer flex-row items-start justify-between rounded bg-transparent px-6 py-3 text-left hover:bg-primary hover:text-light",
           open && "bg-primary text-light",
         )}
         onClick={onClick && (() => onClick())}

@@ -10,7 +10,7 @@ const MapWrapper = ({ children }) => {
       transition={{
         duration: 0.2,
       }}
-      className="min-h-[450px] w-full overflow-hidden rounded-xl border-2 border-primary bg-neutral-300 shadow-2xl transition-all hover:shadow-none lg:w-1/2"
+      className="min-h-[450px] w-full overflow-hidden rounded-xl border-2 border-primary bg-neutral-300 shadow-2xl hover:shadow-none lg:w-1/2"
     >
       {children}
     </motion.div>

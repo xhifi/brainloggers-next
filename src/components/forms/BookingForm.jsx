@@ -89,7 +89,7 @@ const BookingForm = () => {
         aria-hidden="true"
         className="-z-1 pointer-events-none absolute -bottom-24 -right-[90px] size-1/2 select-none opacity-10 lg:animate-[bounce_5s_linear_900ms_infinite]"
       />
-      <div className="wrap relative z-10 flex flex-col rounded-xl border-2 border-primary-light bg-light/75 bg-clip-border text-dark shadow-2xl shadow-black/55 ring-neutral-500/50 ring-offset-2 ring-offset-transparent saturate-150 backdrop-blur-lg transition-all focus-within:ring-4 dark:bg-dark/75 dark:text-light/80">
+      <div className="wrap relative z-10 flex flex-col rounded-xl border-2 border-primary-light bg-light/75 bg-clip-border text-dark shadow-2xl shadow-black/55 ring-neutral-500/50 ring-offset-2 ring-offset-transparent saturate-150 backdrop-blur-lg focus-within:ring-4 dark:bg-dark/75 dark:text-light/80">
         <div className="relative p-8">
           <div className="flex flex-col flex-nowrap items-center gap-y-4 md:flex-row md:gap-x-9 md:gap-y-0">
             <div className="text-dark dark:text-light/80">

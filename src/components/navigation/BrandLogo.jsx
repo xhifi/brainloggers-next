@@ -5,7 +5,7 @@ const BrandLogo = ({ width = 200, color = "light", className = "" }) => {
   return (
     <Link
       href="/"
-      className={`inline-block rounded ring-offset-light invert transition-all focus:outline-none focus:ring-2 focus:ring-primary/25 focus:ring-offset-4`}
+      className={`inline-block rounded ring-offset-light invert focus:outline-none focus:ring-2 focus:ring-primary/25 focus:ring-offset-4`}
     >
       <svg
         viewBox="0 0 250 36.685001"

@@ -21,6 +21,7 @@ const FeatureImage = ({ src, alt, origin, height, delay }) => {
         className="relative h-full object-cover"
         placeholder="blur"
         quality={50}
+        width={450}
       />
     </motion.div>
   );

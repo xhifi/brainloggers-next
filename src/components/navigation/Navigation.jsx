@@ -5,7 +5,7 @@ import ToggleButton from "./ToggleButton";
 import BrandLogo from "./BrandLogo";
 import NavLinks from "./NavLinks";
 import NavigationSocial from "./NavigationSocial";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import useWindowSize from "@/hooks/useWindowSize";
 
 const data = [
@@ -79,19 +79,27 @@ const AppNavigation = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const { width } = useWindowSize();
 
-  useEffect(() => {
-    if (menuOpen) {
+  const handleBodyOverflow = useCallback(() => {
+    if (width < 768 && menuOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
     }
+  }, [width, menuOpen]);
+
+  const handleMenuOpen = useCallback(() => {
+    // if device width is greater than 768px open the menu
+    if (width > 768) {
+      return setMenuOpen(true);
+    }
+  }, [width]);
+
+  useEffect(() => {
+    handleBodyOverflow();
   });
 
   useEffect(() => {
-    // if device width is greater than 768px open the menu
-    if (width > 768) {
-      setMenuOpen(true);
-    }
+    handleMenuOpen;
   }, [width]);
 
   return (

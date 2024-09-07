@@ -41,6 +41,7 @@ export default function Home() {
       <section className="relative overflow-hidden bg-light px-6 py-16 text-dark shadow-2xl dark:bg-primary-dark md:text-light">
         <Image
           src={CornerStructure}
+          width={300}
           className="pointer-events-none absolute left-0 top-0 z-[1] select-none"
           alt="decoration image"
           aria-hidden="true"
@@ -50,10 +51,11 @@ export default function Home() {
           placeholder="blur"
           src={Laptop}
           quality={2}
+          width={500}
           alt=""
           role="presentation"
           aria-hidden="true"
-          className="absolute -bottom-24 right-0 z-0 -rotate-90 scale-150 blur-3xl md:bottom-0"
+          className="absolute -bottom-24 right-0 z-0 h-auto w-full -rotate-90 scale-150 blur-3xl md:bottom-0"
         />
         <FeatureIndex />
       </section>

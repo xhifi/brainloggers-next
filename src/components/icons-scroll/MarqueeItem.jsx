@@ -18,7 +18,7 @@ const MarqueeItem = ({ images, direction = "right", duration = 60 }) => {
               key={image.src}
               alt=""
               width={200}
-              className="pointer-events-none me-16 block h-auto w-full select-none saturate-0 transition-all duration-300"
+              className="pointer-events-none me-16 block h-auto w-full select-none saturate-0"
             />
           );
         })}
@@ -36,7 +36,7 @@ const MarqueeItem = ({ images, direction = "right", duration = 60 }) => {
               key={image.src}
               width={200}
               alt=""
-              className="pointer-events-none me-16 block h-auto w-full select-none saturate-0 transition-all duration-300"
+              className="pointer-events-none me-16 block h-auto w-full select-none saturate-0"
             />
           );
         })}

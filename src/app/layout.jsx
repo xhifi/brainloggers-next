@@ -9,7 +9,6 @@ const roboto = Roboto({
 
 import "./globals.css";
 import ContextsProvider from "@/contexts/ContextsProvider";
-import Script from "next/script";
 import CookieConsent from "@/components/cookie-consent";
 import LenisWrapper from "@/components/LenisWrapper";
 

@@ -11,6 +11,7 @@ const Map = () => {
         zoom="14"
         apiKey={process.env.GOOGLE_MAPS_EMBED_API}
         q="Brainloggers Web & Graphic Designers and IT Consultants"
+        loading="eager"
       />
     </MapWrapper>
   );

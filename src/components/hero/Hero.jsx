@@ -15,15 +15,17 @@ import GradientMesh from "@/static/images/decorations/gradient-mesh-1.jpg";
 
 function Hero() {
   return (
-    <section className="bg-grid-black/[0.1] relative -top-12 overflow-hidden bg-primary pb-10 pt-10 shadow-2xl dark:bg-primary-dark lg:pt-20">
+    <section className="relative -top-12 overflow-hidden bg-primary pb-10 pt-10 shadow-2xl dark:bg-primary-dark lg:pt-20">
       <Image
         src={GradientMesh}
         alt=""
+        width={500}
         role="presentation"
         aria-hidden="true"
         quality={2}
+        priority
         placeholder="blur"
-        className="w-100 h-100 pointer-events-none absolute left-0 top-0 z-0 rotate-90 scale-150 select-none blur-2xl dark:brightness-50 md:rotate-0"
+        className="pointer-events-none absolute left-0 top-0 z-0 h-full w-auto rotate-90 scale-150 select-none blur-2xl dark:brightness-50 md:rotate-0"
       />
       <div className="absolute -top-44 right-64 h-[2000px] w-96 rotate-[22deg] bg-gradient-to-l from-transparent via-light to-transparent px-44 opacity-15 blur-xl lg:px-6" />
       <div className="z-10 mb-20 mt-12 flex flex-col flex-nowrap justify-center gap-x-24 px-6 lg:flex-row lg:items-center lg:px-44">
@@ -110,8 +112,8 @@ function Hero() {
           <BookingForm />
         </div>
       </div>
-      <div className="opacity-25 transition-all duration-500 hover:opacity-100">
-        <IconsScroll />
+      <div className="opacity-25 hover:opacity-100">
+        {/* <IconsScroll /> */}
       </div>
     </section>
   );
